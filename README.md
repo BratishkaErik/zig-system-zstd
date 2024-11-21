@@ -1,7 +1,7 @@
 <!--
 SPDX-FileCopyrightText: 2024 Eric Joldasov
 
-SPDX-License-Identifier: CC0-1.0
+SPDX-License-Identifier: 0BSD
 -->
 
 # zig-system-zstd
