@@ -6,6 +6,15 @@ SPDX-License-Identifier: 0BSD
 
 # zig-system-zstd
 
+Testing ground for Gentoo's `zig.eclass` maintenance.
+
+Contains 1 lazy dependency and 1 system library integration.
+
+Requires Zig 0.16.
+
+> [!WARNING]
+> Info below is very outdated. fix it later...
+
 # Setup
 
 Need Zig and zstd installed, and disable network access before it:

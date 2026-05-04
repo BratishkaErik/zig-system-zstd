@@ -8,10 +8,8 @@ const c = @cImport({
     @cInclude("zstd.h");
 });
 
-pub fn main() error{ OutOfMemory, CompressionFailed, DecompressionFailed }!void {
-    var gpa: std.heap.GeneralPurposeAllocator(.{}) = .{};
-    defer _ = gpa.deinit();
-    const allocator = gpa.allocator();
+pub fn main(init: std.process.Init) error{ OutOfMemory, CompressionFailed, DecompressionFailed }!void {
+    const allocator = init.gpa;
 
     const source = @embedFile("self");
 
@@ -33,7 +31,7 @@ pub fn main() error{ OutOfMemory, CompressionFailed, DecompressionFailed }!void 
         return error.CompressionFailed;
     }
 
-    std.log.debug("compressed = {s}", .{std.fmt.fmtSliceHexUpper(compressed[0..compressed_len])});
+    std.log.debug("compressed = {X}", .{compressed[0..compressed_len]});
 
     // Now decompress
     const decompressed = try allocator.alloc(u8, source.len);
