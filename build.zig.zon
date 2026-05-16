@@ -4,7 +4,7 @@
 
 .{
     .fingerprint = 0xa1d29f0b_5d1adbae,
-    .minimum_zig_version = "0.14.0",
+    .minimum_zig_version = "0.16.0",
 
     .name = .zig_system_zstd,
     .version = "0.0.0",
